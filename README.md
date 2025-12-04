@@ -1,0 +1,2 @@
+(03-12-2025) - I have learnt and practiced the basic Git commands, and GitHub flow fundamentals.
+(04-12-2025) - Revised every concept that I have learnt yesterday, completed the Google Prompting Essentials and practiced prompting in Google Gemini, tried fork and pull request in GitHub, and tried simple coding using GitHub copilot.
