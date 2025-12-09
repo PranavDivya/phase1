@@ -1,0 +1,29 @@
+.wrapper-main{
+    width: 900px;
+    margin: 0 auto;
+}
+
+table, th, td{
+    padding: 15px
+}
+
+table{
+    border-collapse: collapse;
+    border: 2px solid;
+}
+
+th{
+    border: 1px solid;
+}
+
+td{
+    border: 1px solid;
+}
+
+tbody tr:nth-child(even){
+    background-color: rgb(245, 187, 169);
+}
+
+tbody tr:nth-child(odd){
+    background-color: rgb(212, 212, 212);
+}
