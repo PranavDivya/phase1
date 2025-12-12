@@ -25,16 +25,23 @@ h1{
     box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
     background-color: white;
     cursor: pointer;
+    transition: all 0.3s ease-in;
 }
 
 .card:hover{
     color: blue;
-    box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+    transform: translateY(-5%) scale(103%);
 }
 
 .card img{
     width: 100%;
     height: auto;
+    transition: all 0.3s ease;
+}
+
+.card img:hover{
+    transform: scale(105%);
 }
 
 .content{
