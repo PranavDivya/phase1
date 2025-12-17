@@ -1,6 +1,6 @@
 "use strict";
-let message = 'Hello World!';
-console.log(message);
+// let message = 'Hello World!';
+// console.log(message);
 console.log(2+2);
 let person = {
     name: 'maya',
@@ -77,10 +77,10 @@ const items = colors.map( color => `<li>${color}</li>`); //Equivalent to the pre
 console.log(items);
 
 const address = {
-    street: '',
-    city: '',
-    state: ''
-}
+    street: '1st',
+    city: 'Tirupur',
+    state: 'Tamil Nadu'
+};
 
 // const street = address.street;
 // const city = address.city;
@@ -106,3 +106,94 @@ console.log(people);
 // price = 275;
 // let price;
 // console.log(price);
+
+let message = 'This is my first message.';
+console.log(message);
+
+console.log(first.toString());
+console.log(first.join('+'));
+
+const a1 = [['1', '2'], ['3', '4', '5',['6', ['6.1', '6.2', '6.3']], '7']];
+console.log(a1.flat(1));
+console.log(a1.flat(2));
+console.log(a1.flat(3));
+
+first.splice(1, 0, 1.1, 1.2, 1.3);
+console.log(first);
+
+first.splice(1, 3);
+console.log(first);
+
+const sum = first.reduce((accumulator, currentValue) => accumulator += currentValue);
+console.log(sum);
+
+console.log(message.slice(6, 10));
+console.log(message.slice(10, 6));  //Returns empty string.
+
+console.log(message.substring(6, 10));
+console.log(message.substring(10, 6));  //Same as the previous code.
+
+let numerics = [1, 2, 3, 4, 5];
+function addnums(num1, num2, num3){
+    return num1+num2+num3;
+}
+console.log(addnums(...numerics));
+
+let m = moment('2025-12-17T15:00:00.000'); //using ISO 8601 string
+
+m = moment('17/12/2025 2:38PM', 'DD/MM/YYY h:mmA'); //using format
+
+m = moment(600000); //using millisec since epoch
+
+m = moment.unix(600000); //using sec since epoch
+
+m = moment.utc(); //using utc
+console.log(m);
+console.log(m.toString());
+console.log(m.toISOString());
+
+m = moment()
+
+//Getter
+console.log(m.hours());  
+console.log(m.get('hours')); 
+console.log(m.year());
+console.log(m.week());
+
+//Setter
+m.minutes(50);
+m.hours(17);
+m.days(9);
+console.log(m.toString());
+
+const diffMoment = moment('2025-05-22');
+console.log(moment.min(moment(), diffMoment));
+console.log(moment.max(moment(), diffMoment));
+
+m = moment();
+
+// m.add({
+//     'hours': 7,
+//     'minutes': 10
+// });
+
+// m.subtract({
+//     'hours': 7,
+//     'minutes': 10
+// });
+
+// m.startOf('hour');
+
+// m.endOf('year'); 
+
+// m.utc();
+// m.local();
+
+// m.utcOffset('+06:00');
+
+console.log(m.toString());
+
+m.locale('en-in');
+console.log(m.format('L'));
+
+console.log(moment([2027, 0, 29]).fromNow());
