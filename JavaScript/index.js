@@ -323,3 +323,39 @@ const printDetails = printFullName.bind(person1, 'Tiruppur', 'Tamil Nadu');
 
 
 console.log(printDetails);
+
+window.addEventListener("keydown", event => {
+    if (event.key == "v") {
+      document.body.style.background = "violet";
+    }
+  });
+  window.addEventListener("keyup", event => {
+    if (event.key == "v") {
+      document.body.style.background = "";
+    }
+  });
+
+  const btn = document.getElementById('btn');
+
+  btn.addEventListener('click', event => {
+    console.log('Clicked the button.');
+  })
+
+  btn.addEventListener('mouseover', event => {
+    btn.textContent = 'Hovering over';
+  })
+
+  btn.addEventListener('mouseout', event => {
+    btn.textContent = 'No more hovering';
+  })
+
+  document.addEventListener('keydown', event => {
+    if(event.key == 'ArrowUp'){
+        console.log("Going up")
+    }
+
+    if(event.key == 'ArrowDown'){
+        console.log("Going down")
+    }
+  })
+  
