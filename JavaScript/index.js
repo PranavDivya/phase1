@@ -1,4 +1,4 @@
-"use strict";
+// "use strict";
 // let message = 'Hello World!';
 // console.log(message);
 console.log(2+2);
@@ -197,3 +197,129 @@ m.locale('en-in');
 console.log(m.format('L'));
 
 console.log(moment([2027, 0, 29]).fromNow());
+
+const isOdd = num => num%2 === 1;
+// console.log(isOdd(3));
+
+const atLeastTwo = (arr, callback) => arr.filter(callback).length >=2;
+
+console.log(atLeastTwo([2, 4, 5, 6], isOdd));
+
+const input = [
+  {
+    name: "John",
+    yearOfBirth: 1988,
+    placeOfBirth: "New York",
+  },
+  {
+    name: "Nancy",
+    yearOfBirth: 1963,
+    placeOfBirth: "New York",
+  },
+  {
+    name: "John",
+    yearOfBirth: 1980,
+    placeOfBirth: "Toronto",
+  },
+];
+
+const groupBy = (array, callback) => {
+    return array.reduce((accumulator, currentValue) => {
+        let key = callback(currentValue);
+
+        if(accumulator[key]){
+            accumulator[key].push(currentValue);
+        }
+        else{
+            accumulator[key] = [currentValue];
+        }
+        return accumulator;
+    }, {});
+};
+
+
+console.log(groupBy(input, (t) => t.name));
+console.log(groupBy(input, (t) => isOdd(t.yearOfBirth)));
+console.log(groupBy(input, (t) => !isOdd(t.yearOfBirth)));
+
+// const myPromise = new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//         resolve("Resolved after 2 seconds.")
+//     }, 2000);
+// });
+
+// myPromise.then( message => console.log(message));
+
+function clean(){
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            let cleaned = true;
+
+            if(cleaned){
+                resolve("House is clean.");
+            }
+            else{
+                reject("House is not clean.")
+            }
+        }, 2000)
+    })
+}
+
+function takeOutTrash(){
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            let trashed = true;
+
+            if(trashed){
+                resolve("Took out the trash.");
+            }
+            else{
+                reject("Did not take out the trash.");
+            }
+        },2000)
+    })
+}
+
+// clean().then(value => {console.log(value); return takeOutTrash()})
+//          .then(value => {console.log(value); console.log("Finished all the chores.")}).catch(error => console.error(error));
+
+async function doChores(){
+
+    try{
+        const cleanResult = await clean();
+        console.log(cleanResult);
+    
+        const trashResult = await takeOutTrash();
+        console.log(trashResult);
+    
+        console.log("Finished all the chores.");
+    }
+
+    catch(error){
+        console.error(error);
+    }
+}
+
+// doChores();
+
+let person1 = {
+    firstName: 'Divya',
+    lastName: 'Pranav',
+}
+function printFullName(){
+    console.log(`${this.firstName} ${this.lastName} is from ${city}, ${state}`);
+}
+
+printFullName.call(person1, 'Tiruppur', 'Tamil Nadu');
+
+let person2 = {
+    firstName: 'Brandon',
+    lastName: 'Oswel',
+}
+
+printFullName.apply(person2, ['Tiruppur', 'Tamil Nadu']);
+
+const printDetails = printFullName.bind(person1, 'Tiruppur', 'Tamil Nadu');
+
+
+console.log(printDetails);
