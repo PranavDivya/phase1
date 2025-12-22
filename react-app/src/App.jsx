@@ -1,4 +1,15 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
+
+export function InputBox(){
+    const inputRef = useRef(null);
+    useEffect(() => {
+        inputRef.current.focus()
+    })
+    return <div>
+        <label htmlFor="input">Input: </label>
+        <input type="text" ref={inputRef} id="input"/>
+    </div>
+}
 
 function Square({value, onSquareClick}){
   return <button className="square" onClick={onSquareClick}>{value}</button>;

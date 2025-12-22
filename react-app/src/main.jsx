@@ -1,10 +1,13 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
-import Board from './App.jsx'
+import Board, {InputBox} from './App.jsx'
+import LifecycleA from './LifecycleA.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <Board />
+    {/* <InputBox /><br />
+    <Board /> */}
+    <LifecycleA />
   </StrictMode>,
 )
