@@ -3,11 +3,12 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import Board, {InputBox} from './App.jsx'
 import LifecycleA from './LifecycleA.jsx'
+import Forms from './Forms.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    {/* <InputBox /><br />
-    <Board /> */}
-    <LifecycleA />
+    {/* <Board /> */}
+    {/* <LifecycleA /> */}
+    <Forms />
   </StrictMode>,
 )

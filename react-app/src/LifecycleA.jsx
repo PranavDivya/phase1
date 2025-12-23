@@ -26,7 +26,7 @@ export default class LifecycleA extends Component{
     }
 
     getSnapshotBeforeUpdate(prevProps, prevState){
-        console.log("B getSnapshotBeforeUpdate");
+        console.log("A getSnapshotBeforeUpdate");
         return null;
     }
 
@@ -35,7 +35,7 @@ export default class LifecycleA extends Component{
     }
 
     stateChange = () => {
-        this.setState = ({
+        this.setState ({
             name: "Divya"
         })
     }
