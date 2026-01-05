@@ -1,4 +1,4 @@
-import { Box, FormControl, FormLabel, FormControlLabel, RadioGroup, Radio } from '@mui/material';
+import { Paper, FormControl, FormLabel, FormControlLabel, RadioGroup, Radio, Divider } from '@mui/material';
 import { useState } from 'react';
 
 export const MuiRadio = () => {
@@ -8,7 +8,8 @@ export const MuiRadio = () => {
         setValue(event.target.value);
     }
     return(
-        <Box>
+        <>
+        <Paper elevation={4} sx={{width:300, padding:1, margin:'12px'}}>
             <FormControl error>
                 <FormLabel id='job-experience-group-label'>Years of experience</FormLabel>
                 <RadioGroup value={value} onChange={handleChange}name='job-experience-grop' aria-labelledby='job-experience-group-label' row>
@@ -17,6 +18,8 @@ export const MuiRadio = () => {
                     <FormControlLabel control={<Radio />} label='6 and above' value='6 and above'/>
                 </RadioGroup>
             </FormControl>
-        </Box>
+        </Paper>
+        <Divider variant='middle'/>
+        </>
     )
 }

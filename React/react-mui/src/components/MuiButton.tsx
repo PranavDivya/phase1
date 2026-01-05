@@ -1,4 +1,4 @@
-import { Stack, Button, IconButton, ButtonGroup, ToggleButton, ToggleButtonGroup } from "@mui/material";
+import { Stack, Grid, Button, IconButton, ButtonGroup, ToggleButton, ToggleButtonGroup, Link, Divider } from "@mui/material";
 import HomeFilledIcon from '@mui/icons-material/HomeFilled';
 import SendIcon from '@mui/icons-material/Send';
 import FormatBoldIcon from '@mui/icons-material/FormatBold';
@@ -18,18 +18,20 @@ export const MuiButton = () =>{
     return(
         <Stack spacing={4}>
             <Stack spacing={2} direction='row'>
-                <Button variant="text" href="https://google.com">Text</Button>
+                <Button variant="text" href="https://google.com" sx={{margin:'5px'}}>Text</Button>
+                <Divider orientation="vertical" />
                 <Button variant="contained">Contained</Button>
+                <Divider orientation="vertical" sx={{opacity:1}} />
                 <Button variant="outlined">Outlined</Button>
             </Stack>
-            <Stack spacing={2} direction='row'>
+            <Grid container spacing={2}>
                 <Button variant="contained" color="primary">Primary</Button>
                 <Button variant="contained" color='secondary'>Secondary</Button>
                 <Button variant="contained" color="info">Info</Button>
                 <Button variant="contained" color="warning">Warning</Button>
                 <Button variant="contained" color="error">Error</Button>
                 <Button variant="contained" color="success">Success</Button>
-            </Stack>
+            </Grid>
             <Stack spacing={2} direction='row'>
                 <Button variant="contained" startIcon={<HomeFilledIcon />}>Home</Button>
                 <Button variant="contained" endIcon={<SendIcon />}>Send</Button>
@@ -57,6 +59,9 @@ export const MuiButton = () =>{
                     <ToggleButton value='italic'><FormatItalicIcon /></ToggleButton>
                     <ToggleButton value='underlined'><FormatUnderlinedIcon /></ToggleButton>
                 </ToggleButtonGroup>
+            </Stack>
+            <Stack>
+                <Link href='https://google.com' underline="hover" target='_blank'>Sample Link</Link>
             </Stack>
         </Stack>
     )
