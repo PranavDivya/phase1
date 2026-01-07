@@ -10,9 +10,16 @@ export const Login = () => {
     const redirect = location.state?.path || '/'
 
     const handleLogin = () => {
-        auth.login(user)
-        navigate(redirect, { replace: true })
+        if(user.length <= 3){
+            throw new Error("Invalid username");
+        }
+        else {
+            auth.login(user)
+            navigate(redirect, { replace: true })
+        }
     }
+
+
     return (
         <div>
             <label>

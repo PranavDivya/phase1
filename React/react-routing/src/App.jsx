@@ -14,6 +14,7 @@ import { Profile } from "./components/Profile"
 import { AuthProvider } from "./components/auth"
 import { Login } from "./components/Login"
 import { RequireAuth } from "./components/RequireAuth"
+import ErrorBoundary from "./components/ErrorBoundary"
 
 const LazyAbout = React.lazy(() => import('./components/About'))
 export default function App() {
@@ -25,7 +26,7 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="about" element={<React.Suspense fallback='Loading...'><LazyAbout /></React.Suspense>} />
         <Route path="order-status" element={<OrderStatus />} />
-        <Route path="products" element={<Products />}>
+        <Route path="products" element={<ErrorBoundary><Products productName='Product 4' /></ErrorBoundary>} >
           <Route index element={<FeaturedProducts />} />
           <Route path="featured" element={<FeaturedProducts />} />
           <Route path="new" element={<NewProducts />} />

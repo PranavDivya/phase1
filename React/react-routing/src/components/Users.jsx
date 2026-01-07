@@ -1,4 +1,32 @@
+import axios from 'axios'
+import { useState } from 'react'
 import { Outlet, useSearchParams } from "react-router-dom"
+
+// axios.get("https://fakestoreapi.com/users/")
+//     .then( response => console.log(response.data) )
+//     .catch( error => console.log(error.message) )
+
+const newUser = {
+    id: '21',
+    name: 'User2'
+}
+
+// axios.post("http://localhost:3500/users", newUser)
+//     .then( response => console.log(response.data) )
+//     .catch( error => console.log(error.message) )
+
+// axios.put("https://fakestoreapi.com/users/3", newUser)
+//     .then( response => console.log(response.data) )
+//     .catch( error => console.log(error.message) )
+
+// axios.delete("http://localhost:3500/users/21")
+//     .then( response => console.log(response.data) )
+//     .catch( error => console.log(error.message) )
+
+// axios.get("http://localhost:3500/users/21")
+//     .then( response => console.log(response.data) )
+//     .catch( error => console.log(error.message) )
+
 export const Users = () => {
     const[searchParams, setSearchParams] = useSearchParams()
     const showActiveUsers = searchParams.get('filter') === 'active'
